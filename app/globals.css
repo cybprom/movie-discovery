@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&display=swap");
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -10,18 +12,85 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    /* --foreground-rgb: 255, 255, 255; */
+    --foreground-rgb: 0, 0, 0;
   }
 }
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  font-family: "DM Sans", sans-serif;
+}
+
+.line_pagination {
+  height: 5px;
+  width: 10px;
+  color: white;
+}
+.loader {
+  position: relative;
+  width: 100px;
+  height: 16px;
+  padding: 200px 200px;
+}
+.loader:before,
+.loader:after {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #940000;
+  box-shadow: 32px 0 #8d8d8d;
+  left: 0;
+  top: 0;
+  animation: ballMoveX 1s linear infinite;
+}
+.loader:after {
+  box-shadow: none;
+  transform-origin: 40px 0;
+  transform: rotate(-153deg);
+  animation: rotateLoader 1s linear infinite;
+}
+
+@keyframes rotateLoader {
+  0%,
+  10% {
+    transform: rotate(-153deg);
+  }
+  90%,
+  100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes ballMoveX {
+  0%,
+  10% {
+    transform: translateX(0);
+  }
+  90%,
+  100% {
+    transform: translateX(32px);
+  }
+}
+
+@keyframes colorBallMoveX {
+  0% {
+    background-position: 0% 0;
+    transform: translate(-15px, -50%);
+  }
+  15%,
+  25% {
+    background-position: 0% 0;
+    transform: translate(0px, -50%);
+  }
+  75%,
+  85% {
+    background-position: 100% 0;
+    transform: translate(50px, -50%);
+  }
+  100% {
+    background-position: 100% 0;
+    transform: translate(65px, -50%);
+  }
 }
