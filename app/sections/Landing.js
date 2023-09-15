@@ -52,8 +52,7 @@ export default function Landing() {
   useEffect(() => {
     const fetchRandomMovie = async () => {
       try {
-        // const apiKey = process.env.NEXT_PUBLIC_API_KEY;
-        const apiKey = "14270149482cf0566edd1a334969db2e";
+        const apiKey = process.env.NEXT_PUBLIC_API_KEY;
         const response = await fetch(
           `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}`
         );

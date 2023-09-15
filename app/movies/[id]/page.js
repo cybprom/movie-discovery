@@ -23,8 +23,7 @@ export default function MovieDetails() {
   };
 
   useEffect(() => {
-    // const apiKey = process.env.NEXT_PUBLIC_API_KEY;
-    const apiKey = "14270149482cf0566edd1a334969db2e";
+    const apiKey = process.env.NEXT_PUBLIC_API_KEY;
     const fetchMovieDetails = async () => {
       try {
         const response = await fetch(
