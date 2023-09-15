@@ -9,7 +9,7 @@ export default function Featured() {
   const getMovie = async () => {
     try {
       // const apiKey = process.env.DB_API;
-      const apiKey = process.env.NEXT_PUBLIC_API_KEY;
+      const apiKey = process.env.API_KEY;
       const response = await fetch(
         `https://api.themoviedb.org/3/movie/top_rated?api_key=${apiKey}`
       );
