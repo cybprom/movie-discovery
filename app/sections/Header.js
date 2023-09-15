@@ -35,7 +35,7 @@ export default function Header() {
       </form>
       <div className="flex items-center space-x-5">
         <h2>Sign in</h2>
-        <img src="/menu.svg" />
+        <img src="/Menu.svg" />
       </div>
     </header>
   );

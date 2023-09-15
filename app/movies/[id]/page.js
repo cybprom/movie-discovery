@@ -150,7 +150,7 @@ export default function MovieDetails() {
 
             <div className="detailRatingContainer flex flex-col md:items-end gap-5 py-10 md:py-20">
               <div className="detailRating flex items-center gap-3">
-                <img src="/star.svg" alt="star" />
+                <img src="/Star.svg" alt="star" />
                 <p className="movieDetailVote text-xl font-medium text-[#e8e8e8]">
                   {movieDetails.vote_average}
                 </p>
